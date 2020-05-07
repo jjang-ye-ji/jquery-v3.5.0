@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css" rel="stylesheet">
+    <title>웹디자인기능사 - 탭 기능</title>
+    <style>
+        body{
+            font: 16px/1.5 dotum, gulim, batang;
+            color:#222328;
+            background:#fff;
+        }
+        a,a:link {
+            color:inherit;
+            text-decoration: none;
+        }
+        #board_tab{
+            width:480px;
+            height: 200px;
+            margin: 0 auto;
+        }
+        .title {
+            border-bottom:1px solid #222328;
+        }
+        .title li{
+            display: inline-block;
+        }
+        .title li.on a {
+            background: #222328;
+            display:block;
+            color:#fff;
+            padding: 15px 10px;
+            border:1px solid #222328;
+            border-top-left-radius: 30px;
+        }
+        .contents {
+            position: relative;
+        }
+        #notice{
+            list-style:square inside;
+            margin: 0 0 0 1em;
+        }
+        #gallery{
+            display: none;
+            position: absolute;
+            top:0;
+            left:0;
+            width:100%;
+            height:100%;
+            background: #fff;
+        }
+        #gallery li {
+            display: inline-block;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script>
+        $(function(){
+            $(".title li").click(function(){
+                if(!$(this).hasClass("on")){
+                    $("#gallery").css("display","block");
+                }else{
+                    $("#gallery").css("display","none");
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    <h1>탭 기능 구현</h1>
+    <div id="board_tab">
+        <div class="title">
+            <ul>
+                <li class="on"><a href="#">공지사항</a></li>
+                <li><a href="#">갤러리</a></li>
+            </ul>
+        </div>
+        <div class="contents">
+            <ul id="notice">
+                <li><a href="#">Lorem ipsum dolor sit amet.</a></li>
+                <li><a href="#">Lorem ipsum dolor sit amet.</a></li>
+                <li><a href="#">Lorem ipsum dolor sit amet.</a></li>
+                <li><a href="#">Lorem ipsum dolor sit amet.</a></li>
+                <li><a href="#">Lorem ipsum dolor sit amet.</a></li>
+            </ul>
+            <ul id="gallery">
+                <li>
+                    <figure>
+                        <img src="https://via.placeholder.com/100x100/ff6633/ffffff?text=dummy+image" alt="dummy">
+                        <figcaption>갤러리1</figcaption>
+                    </figure>
+                </li>
+                <li>
+                    <figure>
+                        <img src="https://via.placeholder.com/100x100/ff6633/ffffff?text=dummy+image" alt="dummy">
+                        <figcaption>갤러리2</figcaption>
+                    </figure>
+                </li>
+                <li>
+                    <figure>
+                        <img src="https://via.placeholder.com/100x100/ff6633/ffffff?text=dummy+image" alt="dummy">
+                        <figcaption>갤러리3</figcaption>
+                    </figure>
+                </li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
