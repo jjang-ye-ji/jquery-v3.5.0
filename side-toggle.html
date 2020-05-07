@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>객체조작메서드 - 활용</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <style>
+        body{
+            font:16px/1.5 "Noto Sans KR",sans-serif;
+            color:#333;
+        }
+        a, a:link {
+            text-decoration: none;
+            color:inherit;
+        }
+        #side{
+            transition: all 0.3s;
+            width:300px;
+            height:100%;
+            position: fixed;
+            left:-290px;
+            top:0;
+            background: coral;
+            z-index: 9999;
+            color:#f2f2f2;
+            box-shadow: 3px 0 7px 0 rgba(0,0,0,.3);
+        }
+        .open{
+            left: 0 !important;
+        }
+        .onoff_btn{
+            position: absolute;
+            right:0;
+            width:50px;
+            height:50px;
+            border-radius: 50%;
+            background: coral;
+            top:50%;
+            box-sizing: border-box;
+            transform: translate(50%,-50%);
+            text-align: center;
+            padding: 0 10px 0 0;
+            line-height: 45px;
+            font-size: 2em;
+            box-shadow: 3px 0 7px 0 rgba(0,0,0,.3);
+        }
+        .logo{
+            margin: 5% 2%;
+            height: 100px;
+            background: darkorchid;
+            text-align: center;
+            line-height: 100px;
+        }
+        .nav {
+            margin-left: 50px;
+        }
+        #gnb li {
+            padding: 15px 0;
+            border-bottom: 1px solid #fff;
+            
+        }
+    </style>
+    <script>
+        $(function(){
+            $(".onoff_btn").click(function(){
+                $("#side").toggleClass("open");
+                // if($("#side").hasClass("open")){
+                //     $(".onoff_btn").html("&lt;");
+                // } else {
+                //     $(".onoff_btn").html("&lt;");
+                // }
+            });
+        });
+    </script>
+</head>
+<body>
+    <h1>객체조작메서드 활용</h1>
+    <div id="side">
+        <div class="side_wrapper">
+            <div class="logo">
+                <a href="#">Logo Text</a>
+            </div>
+            <div class="nav">
+                <ul id="gnb">
+                    <li><a href="#">Menu Text 01</a></li>
+                    <li><a href="#">Menu Text 02</a></li>
+                    <li><a href="#">Menu Text 03</a></li>
+                    <li><a href="#">Menu Text 04</a></li>
+                    <li><a href="#">Menu Text 05</a></li>
+                </ul>
+            </div>
+            <div class="sns">
+                <ul>
+                    <li><a href="#"><img src="https://via.placeholder.com/30" alt="dummy"></a></li>
+                    <li><a href="#"><img src="https://via.placeholder.com/30" alt="dummy"></a></li>
+                    <li><a href="#"><img src="https://via.placeholder.com/30" alt="dummy"></a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="onoff_btn">></div>
+    </div>
+</body>
+</html>
