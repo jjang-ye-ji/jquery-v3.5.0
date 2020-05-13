@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>객체 편집 메서드</title>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script>
+    $(document).ready(function(){
+        // $("<li>appendTo 리스트항목</li>").appendTo("#listZone");
+        // $("<p>Test</p>").appendTo(".inner");
+        $("h2").appendTo($(".container"));
+    });
+    </script>
+</head>
+<body>
+    <h1>객체 편집 메서드</h1>
+    <h2>235~236p</h2>
+    <p>append() appendTo() prepend() prependTo()</p>
+    <h3>예시</h3>
+    <!-- <ul id="listZone">
+        <li>리스트</li>
+    </ul> -->
+    <div class="container">
+        <div class="inner">Hello</div>
+        <div class="inner">Goodbye</div>
+      </div>
+</body>
+</html>
