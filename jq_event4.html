@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>제이쿼리 이벤트</title>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script>
+    $(document).ready(function(){
+        var h1 = $(".img1").height();
+        console.log("ready event : "+h1);
+    });
+    $(window).load(function(){
+        var h2 = $(".img1").height();
+        console.log("load event : "+h2);
+    });
+    </script>
+</head>
+<body>
+    <h1>로딩이벤트</h1>
+    <h2>254p</h2>
+    <p>.ready() / .load()</p>
+    <h2>예시</h2>
+    <p>
+        <img src="https://via.placeholder.com/100x100/ff6633/ffffff?text=dummy+image" alt="dummy" class="img1">
+    </p>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>제이쿼리 이벤트</title>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script>
+    $(document).ready(function(){
+        $(".btn1").click(function(){
+            $(".btn1").parent().next().css("color","#f00");
+        });
+
+        var timeout = setTimeout(function(){
+            $(".btn1").click();
+        },3000);
+
+        $(".btn2").on({
+            "mouseover focus":function(){
+                $(".btn2").parent().next().css("color","#f0f");
+            }
+        });
+
+        var timeoust2 = setTimeout(function(){
+            $(".btn2").trigger("mouseover");
+        },5000);
+    });
+    </script>
+</head>
+<body>
+    <h1>강제로 이벤트 발생시키기</h1>
+    <h2>250~251p</h2>
+    <p>이벤트가 강제로 발생했다 -> 사용자에 의해 이벤트가 발생했음을 의미하는 것이 아니라, 핸들러에 의해 자동으로 이벤트가 발생되었음을 의미한다.</p>
+    <h2>예시</h2>
+    <p>
+        <button class="btn1">버튼 1</button>
+    </p>
+    <p>내용 1 - Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi, et.</p>
+    <p>
+        <button class="btn2">버튼 2</button>
+    </p>
+    <p>내용 2 - Lorem ipsum dolor, sit amet consectetur adipisicing.</p>
+</body>
+</html>

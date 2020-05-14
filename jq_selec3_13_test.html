@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>객체 편집 메서드</title>
+    <style>
+        div{
+            background: aqua;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script>
+    $(document).ready(function(){
+        $("strong").unwrap();
+        $(".ct1").wrap("<div />");
+        $(".ct2").wrapAll("<div />");
+        $("li").wrapInner("<h3 />");
+    });
+    </script>
+</head>
+<body>
+    <h1>객체 편집 메서드</h1>
+    <h2>239~240p</h2>
+    <p>wrap() unwrap() wrapAll() wrapInner()</p>
+    <p>unwrap() - 선택한 요소의 부모 요소를 삭제</p>
+    <p>wrap() - 선택한 요소를 각각 새 요소로 감싼다</p>
+    <p>wrapAll() - 선택한 요소를 한꺼번에 새 요소로 감싼다.</p>
+    <p>wrapInner() - 선택한 요소의 모든 하위 요소를 새 요소로 감싼다.</p>
+    <h1 id="tit_1">
+        <strong>객체 조작 및 생성</strong>
+    </h1>
+    <p class="ct1">내용1</p>
+    <p class="ct1">내용2</p>
+    <p class="ct2">내용3</p>
+    <p class="ct2">내용4</p>
+    <ul>
+        <li>내용5</li>
+        <li>내용6</li>
+    </ul>
+</body>
+</html>

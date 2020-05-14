@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>제이쿼리 이벤트</title>
+    <style>
+        .content > div {
+            height: 1000px;
+            background: gold;
+        }
+        .content > div:nth-of-type(2n+1) {
+            background: chartreuse;
+        }
+        .nav {
+            position: fixed;
+            right:5%;
+            top:50%;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script>
+    $(document).ready(function(){
+        // a, form 태그에 클릭 이벤트 적용시 기본 이벤트 차단하기
+        // $("a").click(function(){
+        //     alert($(this).text());
+        // });
+
+        $("a").click(function(){
+            e.preventdefault
+        });
+    });
+    </script>
+</head>
+<body>
+    <h1>마우스 이벤트</h1>
+    <div class="nav">
+        <ul id="gnb">
+            <li><a href="javascript:;">페이지1</a></li>
+            <li><a href="#" onclick="return false;">페이지2</a></li>
+            <li><a href="#">페이지3</a></li>
+            <li><a href="#">페이지4</a></li>
+        </ul>
+    </div>
+    <div class="content">
+        <div id="page1">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam nisi consequatur aut, tenetur aliquam maiores maxime totam cupiditate explicabo voluptate distinctio voluptatibus sunt molestiae veniam sint earum dolor laudantium non!</p>
+        </div>
+        <div id="page2">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam nisi consequatur aut, tenetur aliquam maiores maxime totam cupiditate explicabo voluptate distinctio voluptatibus sunt molestiae veniam sint earum dolor laudantium non!</p>
+        </div>
+        <div id="page3">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam nisi consequatur aut, tenetur aliquam maiores maxime totam cupiditate explicabo voluptate distinctio voluptatibus sunt molestiae veniam sint earum dolor laudantium non!</p>
+        </div>
+        <div id="page4">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam nisi consequatur aut, tenetur aliquam maiores maxime totam cupiditate explicabo voluptate distinctio voluptatibus sunt molestiae veniam sint earum dolor laudantium non!</p>
+        </div>
+    </div>
+</body>
+</html>
