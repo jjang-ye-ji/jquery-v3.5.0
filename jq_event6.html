@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>제이쿼리 이벤트</title>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script>
+    $(document).ready(function(){
+        //258p
+        //mouseover 이벤트 핸들러
+        // $("대상").mouseover(function(){실행할 자바 코드});
+        // $("대상").on("mouseover",function(){실행할 자바 코드});
+        // $("대상").mouseover();
+
+        $(".btn1").mouseover(function(){
+            $(".txt1").css("background-color","yellow");
+        });
+        $(".btn1").mouseout(function(){
+            $(".txt1").css("background-color","white");
+        });
+
+        $(".btn2").hover(
+            function(){
+                $(".txt2").css("background-color","salmon");
+            },
+            function(){
+                $(".txt2").css("background-color","white");
+            }
+        );
+    });
+    </script>
+</head>
+<body>
+    <h1>마우스 이벤트</h1>
+    <h2>257~259p</h2>
+    <p>mouseover() mouseout() hover()</p>
+    <h2>예시</h2>
+    <p>
+        <button class="btn1">MouseOver / MouseOut</button>
+    </p>
+    <p class="txt1">내용1 - Lorem ipsum dolor sit amet consectetur, adipisicing elit. Explicabo, eos.</p>
+    <p>
+        <button class="btn2">Hover</button>
+    </p>
+    <p class="txt2">내용2 - Lorem ipsum dolor sit amet consectetur adipisicing.</p>
+</body>
+</html>
