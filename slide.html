@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>수직 슬라이드 배너</title>
+    <style>
+        * {
+            margin:0;
+            padding:0;
+        }
+        ul, li, ol {
+            list-style: none;
+        }
+        .slide{
+            width: 1200px;
+            height:300px;
+            margin: 50px auto 0;
+            overflow: hidden;
+        }
+        .slide_wrap {
+            width:1200px;
+            height:900px;
+        }
+        .slide_wrap li {
+            display: block;
+            font-size: 0;
+        }
+        figcaption{
+            display: none;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script>
+    var HEIGHT, INDEX;
+    $(function(){
+        HEIGHT = 300;
+        INDEX = 0;
+        setInterval(slide,3000);
+    });
+    function slide(){
+        if(INDEX >= 3) INDEX = 0;
+        var nPos = -1 * HEIGHT * INDEX;
+        $(".slide_wrap").animate({
+            marginTop:nPos
+        },400,"swing");
+        INDEX = INDEX+1;
+    }
+    </script>
+</head>
+<body>
+    <div class="slide">
+        <div class="slide_wrap">
+            <ul>
+                <li>
+                    <figure>
+                        <img src="images/img1.jpg" width="1200" height="300" alt="슬라이드이미지1">
+                        <figcaption>슬라이드 이미지 01</figcaption>
+                    </figure>
+                </li>
+                <li>
+                    <figure>
+                        <img src="images/img2.jpg" width="1200" height="300" alt="슬라이드이미지2">
+                        <figcaption>슬라이드 이미지 02</figcaption>
+                    </figure>
+                </li>
+                <li>
+                    <figure>
+                        <img src="images/img3.jpg" width="1200" height="300" alt="슬라이드이미지3">
+                        <figcaption>슬라이드 이미지 03</figcaption>
+                    </figure>
+                </li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
