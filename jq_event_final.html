@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>제이쿼리 이벤트 총정리 실습</title>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    
+<body>
+    <h1>총정리 실습</h1>
+    <h2>284~285p</h2>
+    <p>글자 확대, 축소 버튼을 만들고 이벤트 핸들러 메서드를 이용해 기능을 구현해보자</p>
+    <h2>요구사항</h2>
+    <ul>
+        <li>글자 크기가 : 최소 8px, 기본 14px, 최대 20px</li>
+        <li>확대 또는 축소 버튼 클릭시 1px씩 확대/축소 기능적용</li>
+        <li>100% 버튼 : 기본 값(14px) 설정</li>
+        <li>설정된 글자 크기에 맞춰 문장의 글자 크기를 변경</li>
+    </ul>
+    <h2>예시</h2>
+    <div id="btn_group">
+        <button id="zoomOut">축소</button>
+        <button id="zoomReset">기본</button>
+        <button id="zoomIn">확대</button>
+    </div>
+    <div id="contents">
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Minus sequi accusamus quisquam debitis nulla vero tenetur voluptatem natus, necessitatibus saepe impedit ex eum, obcaecati architecto aliquam quos? Dolor, debitis itaque!</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis cupiditate velit adipisci? Natus iure, dolores expedita ut pariatur aut illo, culpa ducimus dolor explicabo saepe animi inventore. Esse, sapiente exercitationem!</p>
+    </div>
+    <script>
+        $(function(){
+            var baseFont=14;
+            $("#btn_group button").on("click",function(){
+                var choice = $(this).attr("id");
+                console.log(choice);
+                switch(choice){
+                    case "zoomIn":baseFont+=1;
+                    break;
+                    case "zoomOut":baseFont-=1;
+                    break;
+                    case "zoomReset":baseFont=14;
+                    break;
+                    default:console.log("글자크기 : "+baseFont);
+                }
+                if(baseFont <= 0 || baseFont >= 20){
+                    alert("더이상 조절할 수 없습니다.");
+                }
+                $("#contents p").css("font-size",baseFont);
+            });
+        });
+    </script>
+</body>
+</html>

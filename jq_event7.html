@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>제이쿼리 이벤트</title>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+</head>
+<body>
+    <h1>마우스 이벤트</h1>
+    <h2>260p</h2>
+    <p>mouseover() mouseout() / mouseenter() mouseleave()</p>
+    <p>선택한 요소에 닿거나 마우스가 벗어나야 이벤트가 발생되는 메서드 / 선택한 요소가 포함된 범위에 닿거나 벗어나야 이벤트가 발생되는 메서드</p>
+    <h2>예시</h2>
+    <h3>mouseover/mouseout</h3>
+    <div id="box_1">
+        <p><a href="#">내용 1</a></p>
+        <p><a href="#">내용 2</a></p>
+        <p><a href="#">내용 3</a></p>
+    </div>
+    <h3>mouseenter/mouseleave</h3>
+    <div id="box_2">
+        <p><a href="#">내용 4</a></p>
+        <p><a href="#">내용 5</a></p>
+        <p><a href="#">내용 6</a></p>
+    </div>
+    <script>
+        $(document).ready(function(){
+            $("#box_1").on({
+                mouseover:function(){
+                    $("#box_1").css("background","yellow");
+                },
+                mouseout:function(){
+                    $("#box_1").css("background","white");
+                }
+            });
+            $("#box_2").on({
+                mouseenter:function(){
+                    $("#box_2").css("background","salmon");
+                },
+                mouseleave:function(){
+                    $("#box_2").css("background","white");
+                }
+            });
+        });
+    </script>
+</body>
+</html>

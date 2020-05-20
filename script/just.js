@@ -13,14 +13,14 @@ function gnb(){
     //     $(".lnb").hide();
     // });
 
-    $("#gnb > li").hover(
-        function(){
+    $("#gnb > li").on({
+        mouseover:function(){
             $(this).addClass("on");
-            $(".lnb").show();
+            $(".lnb").show(1000);
         },
-        function(){
+        mouseout:function(){
             $(this).removeClass("on");
             $(".lnb").hide();
         }
-    );
+    });
 }
